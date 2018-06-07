@@ -1,6 +1,8 @@
 # See: http://code.google.com/p/arduino/wiki/Platforms
 
 menu.cpu=Processor
+menu.debug=Debug output
+
 
 ##############################################################
 
@@ -77,6 +79,14 @@ uno.build.board=AVR_UNO
 uno.build.core=arduino
 uno.build.variant=standard
 
+# DEBUG OUTPUT
+uno.menu.debug.None=None
+uno.menu.debug.None.build.debug_output=
+uno.menu.debug.Serial=Serial
+uno.menu.debug.Serial.build.debug_output=-DDEBUG_OUT=Serial
+
+uno.build.extra_flags={build.debug_output}
+
 ##############################################################
 
 diecimila.name=Arduino Duemilanove or Diecimila
@@ -121,6 +131,14 @@ diecimila.menu.cpu.atmega168.bootloader.extended_fuses=0xF8
 diecimila.menu.cpu.atmega168.bootloader.file=atmega/ATmegaBOOT_168_diecimila.hex
 
 diecimila.menu.cpu.atmega168.build.mcu=atmega168
+
+# DEBUG OUTPUT
+diecimila.menu.debug.None=None
+diecimila.menu.debug.None.build.debug_output=
+diecimila.menu.debug.Serial=Serial
+diecimila.menu.debug.Serial.build.debug_output=-DDEBUG_OUT=Serial
+
+diecimila.build.extra_flags={build.debug_output}
 
 ##############################################################
 
@@ -183,6 +201,14 @@ nano.menu.cpu.atmega168.bootloader.file=atmega/ATmegaBOOT_168_diecimila.hex
 
 nano.menu.cpu.atmega168.build.mcu=atmega168
 
+# DEBUG OUTPUT
+nano.menu.debug.None=None
+nano.menu.debug.None.build.debug_output=
+nano.menu.debug.Serial=Serial
+nano.menu.debug.Serial.build.debug_output=-DDEBUG_OUT=Serial
+
+nano.build.extra_flags={build.debug_output}
+
 ##############################################################
 
 mega.name=Arduino/Genuino Mega or Mega 2560
@@ -244,6 +270,20 @@ mega.menu.cpu.atmega1280.bootloader.file=atmega/ATmegaBOOT_168_atmega1280.hex
 mega.menu.cpu.atmega1280.build.mcu=atmega1280
 mega.menu.cpu.atmega1280.build.board=AVR_MEGA
 
+# DEBUG OUTPUT
+mega.menu.debug.None=None
+mega.menu.debug.None.build.debug_output=
+mega.menu.debug.Serial=Serial
+mega.menu.debug.Serial.build.debug_output=-DDEBUG_OUT=Serial
+mega.menu.debug.Serial1=Serial1
+mega.menu.debug.Serial1.build.debug_output=-DDEBUG_OUT=Serial1
+mega.menu.debug.Serial2=Serial2
+mega.menu.debug.Serial2.build.debug_output=-DDEBUG_OUT=Serial2
+mega.menu.debug.Serial3=Serial3
+mega.menu.debug.Serial3.build.debug_output=-DDEBUG_OUT=Serial3
+
+mega.build.extra_flags={build.debug_output}
+
 ##############################################################
 
 megaADK.name=Arduino Mega ADK
@@ -276,6 +316,20 @@ megaADK.build.f_cpu=16000000L
 megaADK.build.board=AVR_ADK
 megaADK.build.core=arduino
 megaADK.build.variant=mega
+
+# DEBUG OUTPUT
+megaADK.menu.debug.None=None
+megaADK.menu.debug.None.build.debug_output=
+megaADK.menu.debug.Serial=Serial
+megaADK.menu.debug.Serial.build.debug_output=-DDEBUG_OUT=Serial
+megaADK.menu.debug.Serial1=Serial1
+megaADK.menu.debug.Serial1.build.debug_output=-DDEBUG_OUT=Serial1
+megaADK.menu.debug.Serial2=Serial2
+megaADK.menu.debug.Serial2.build.debug_output=-DDEBUG_OUT=Serial2
+megaADK.menu.debug.Serial3=Serial3
+megaADK.menu.debug.Serial3.build.debug_output=-DDEBUG_OUT=Serial3
+
+megaADK.build.extra_flags={build.debug_output}
 
 ##############################################################
 
@@ -314,7 +368,16 @@ leonardo.build.usb_product="Arduino Leonardo"
 leonardo.build.board=AVR_LEONARDO
 leonardo.build.core=arduino
 leonardo.build.variant=leonardo
-leonardo.build.extra_flags={build.usb_flags}
+
+# DEBUG OUTPUT
+leonardo.menu.debug.None=None
+leonardo.menu.debug.None.build.debug_output=
+leonardo.menu.debug.Serial=Serial
+leonardo.menu.debug.Serial.build.debug_output=-DDEBUG_OUT=Serial
+leonardo.menu.debug.Serial1=Serial1
+leonardo.menu.debug.Serial1.build.debug_output=-DDEBUG_OUT=Serial1
+
+leonardo.build.extra_flags={build.usb_flags} {build.debug_output}
 
 ##############################################################
 
@@ -349,7 +412,16 @@ leonardoeth.build.usb_product="Arduino Leonardo ETH"
 leonardoeth.build.board=AVR_LEONARDO_ETH
 leonardoeth.build.core=arduino
 leonardoeth.build.variant=leonardo
-leonardoeth.build.extra_flags={build.usb_flags}
+
+# DEBUG OUTPUT
+leonardoeth.menu.debug.None=None
+leonardoeth.menu.debug.None.build.debug_output=
+leonardoeth.menu.debug.Serial=Serial
+leonardoeth.menu.debug.Serial.build.debug_output=-DDEBUG_OUT=Serial
+leonardoeth.menu.debug.Serial1=Serial1
+leonardoeth.menu.debug.Serial1.build.debug_output=-DDEBUG_OUT=Serial1
+
+leonardoeth.build.extra_flags={build.usb_flags} {build.debug_output}
 
 ##############################################################
 
@@ -407,7 +479,16 @@ micro.build.usb_product="Arduino Micro"
 micro.build.board=AVR_MICRO
 micro.build.core=arduino
 micro.build.variant=micro
-micro.build.extra_flags={build.usb_flags}
+
+# DEBUG OUTPUT
+micro.menu.debug.None=None
+micro.menu.debug.None.build.debug_output=
+micro.menu.debug.Serial=Serial
+micro.menu.debug.Serial.build.debug_output=-DDEBUG_OUT=Serial
+micro.menu.debug.Serial1=Serial1
+micro.menu.debug.Serial1.build.debug_output=-DDEBUG_OUT=Serial1
+
+micro.build.extra_flags={build.usb_flags} {build.debug_output}
 
 ##############################################################
 
@@ -447,6 +528,16 @@ esplora.build.board=AVR_ESPLORA
 esplora.build.core=arduino
 esplora.build.variant=leonardo
 esplora.build.extra_flags={build.usb_flags}
+
+# DEBUG OUTPUT
+esplora.menu.debug.None=None
+esplora.menu.debug.None.build.debug_output=
+esplora.menu.debug.Serial=Serial
+esplora.menu.debug.Serial.build.debug_output=-DDEBUG_OUT=Serial
+esplora.menu.debug.Serial1=Serial1
+esplora.menu.debug.Serial1.build.debug_output=-DDEBUG_OUT=Serial1
+
+esplora.build.extra_flags={build.usb_flags} {build.debug_output}
 
 ##############################################################
 
@@ -493,6 +584,14 @@ mini.menu.cpu.atmega168.bootloader.file=atmega/ATmegaBOOT_168_ng.hex
 
 mini.menu.cpu.atmega168.build.mcu=atmega168
 
+# DEBUG OUTPUT
+mini.menu.debug.None=None
+mini.menu.debug.None.build.debug_output=
+mini.menu.debug.Serial=Serial
+mini.menu.debug.Serial.build.debug_output=-DDEBUG_OUT=Serial
+
+mini.build.extra_flags={build.debug_output}
+
 ##############################################################
 
 ethernet.name=Arduino Ethernet
@@ -517,6 +616,14 @@ ethernet.build.f_cpu=16000000L
 ethernet.build.board=AVR_ETHERNET
 ethernet.build.core=arduino
 
+# DEBUG OUTPUT
+ethernet.menu.debug.None=None
+ethernet.menu.debug.None.build.debug_output=
+ethernet.menu.debug.Serial=Serial
+ethernet.menu.debug.Serial.build.debug_output=-DDEBUG_OUT=Serial
+
+ethernet.build.extra_flags={build.debug_output}
+
 ##############################################################
 
 fio.name=Arduino Fio
@@ -540,6 +647,14 @@ fio.build.f_cpu=8000000L
 fio.build.board=AVR_FIO
 fio.build.core=arduino
 fio.build.variant=eightanaloginputs
+
+# DEBUG OUTPUT
+fio.menu.debug.None=None
+fio.menu.debug.None.build.debug_output=
+fio.menu.debug.Serial=Serial
+fio.menu.debug.Serial.build.debug_output=-DDEBUG_OUT=Serial
+
+fio.build.extra_flags={build.debug_output}
 
 ##############################################################
 
@@ -584,6 +699,15 @@ bt.menu.cpu.atmega168.bootloader.file=bt/ATmegaBOOT_168.hex
 
 bt.menu.cpu.atmega168.build.mcu=atmega168
 
+
+# DEBUG OUTPUT
+bt.menu.debug.None=None
+bt.menu.debug.None.build.debug_output=
+bt.menu.debug.Serial=Serial
+bt.menu.debug.Serial.build.debug_output=-DDEBUG_OUT=Serial
+
+bt.build.extra_flags={build.debug_output}
+
 ##############################################################
 
 LilyPadUSB.name=LilyPad Arduino USB
@@ -617,7 +741,16 @@ LilyPadUSB.build.usb_product="LilyPad USB"
 LilyPadUSB.build.board=AVR_LILYPAD_USB
 LilyPadUSB.build.core=arduino
 LilyPadUSB.build.variant=leonardo
-LilyPadUSB.build.extra_flags={build.usb_flags}
+
+# DEBUG OUTPUT
+LilyPadUSB.menu.debug.None=None
+LilyPadUSB.menu.debug.None.build.debug_output=
+LilyPadUSB.menu.debug.Serial=Serial
+LilyPadUSB.menu.debug.Serial.build.debug_output=-DDEBUG_OUT=Serial
+LilyPadUSB.menu.debug.Serial1=Serial1
+LilyPadUSB.menu.debug.Serial1.build.debug_output=-DDEBUG_OUT=Serial1
+
+LilyPadUSB.build.extra_flags={build.usb_flags} {build.debug_output}
 
 ##############################################################
 
@@ -664,6 +797,14 @@ lilypad.menu.cpu.atmega168.bootloader.extended_fuses=0xF8
 lilypad.menu.cpu.atmega168.bootloader.file=lilypad/LilyPadBOOT_168.hex
 
 lilypad.menu.cpu.atmega168.build.mcu=atmega168
+
+# DEBUG OUTPUT
+lilypad.menu.debug.None=None
+lilypad.menu.debug.None.build.debug_output=
+lilypad.menu.debug.Serial=Serial
+lilypad.menu.debug.Serial.build.debug_output=-DDEBUG_OUT=Serial
+
+lilypad.build.extra_flags={build.debug_output}
 
 ##############################################################
 
@@ -744,6 +885,14 @@ pro.menu.cpu.8MHzatmega168.bootloader.file=atmega/ATmegaBOOT_168_pro_8MHz.hex
 pro.menu.cpu.8MHzatmega168.build.mcu=atmega168
 pro.menu.cpu.8MHzatmega168.build.f_cpu=8000000L
 
+# DEBUG OUTPUT
+pro.menu.debug.None=None
+pro.menu.debug.None.build.debug_output=
+pro.menu.debug.Serial=Serial
+pro.menu.debug.Serial.build.debug_output=-DDEBUG_OUT=Serial
+
+pro.build.extra_flags={build.debug_output}
+
 ##############################################################
 
 atmegang.name=Arduino NG or older
@@ -790,6 +939,14 @@ atmegang.menu.cpu.atmega8.bootloader.file=atmega8/ATmegaBOOT-prod-firmware-2009-
 
 atmegang.menu.cpu.atmega8.build.mcu=atmega8
 
+# DEBUG OUTPUT
+atmegang.menu.debug.None=None
+atmegang.menu.debug.None.build.debug_output=
+atmegang.menu.debug.Serial=Serial
+atmegang.menu.debug.Serial.build.debug_output=-DDEBUG_OUT=Serial
+
+atmegang.build.extra_flags={build.debug_output}
+
 ##############################################################
 
 robotControl.name=Arduino Robot Control
@@ -827,7 +984,16 @@ robotControl.build.usb_product="Robot Control"
 robotControl.build.board=AVR_ROBOT_CONTROL
 robotControl.build.core=arduino
 robotControl.build.variant=robot_control
-robotControl.build.extra_flags={build.usb_flags}
+
+# DEBUG OUTPUT
+robotControl.menu.debug.None=None
+robotControl.menu.debug.None.build.debug_output=
+robotControl.menu.debug.Serial=Serial
+robotControl.menu.debug.Serial.build.debug_output=-DDEBUG_OUT=Serial
+robotControl.menu.debug.Serial1=Serial1
+robotControl.menu.debug.Serial1.build.debug_output=-DDEBUG_OUT=Serial1
+
+robotControl.build.extra_flags={build.usb_flags} {build.debug_output}
 
 ##############################################################
 
@@ -866,7 +1032,16 @@ robotMotor.build.usb_product="Robot Motor"
 robotMotor.build.board=AVR_ROBOT_MOTOR
 robotMotor.build.core=arduino
 robotMotor.build.variant=robot_motor
-robotMotor.build.extra_flags={build.usb_flags}
+
+# DEBUG OUTPUT
+robotMotor.menu.debug.None=None
+robotMotor.menu.debug.None.build.debug_output=
+robotMotor.menu.debug.Serial=Serial
+robotMotor.menu.debug.Serial.build.debug_output=-DDEBUG_OUT=Serial
+robotMotor.menu.debug.Serial1=Serial1
+robotMotor.menu.debug.Serial1.build.debug_output=-DDEBUG_OUT=Serial1
+
+robotMotor.build.extra_flags={build.usb_flags} {build.debug_output}
 
 ##############################################################
 
@@ -892,6 +1067,8 @@ gemma.build.board=AVR_GEMMA
 gemma.upload.tool=avrdude
 gemma.upload.maximum_size=5310
 
+# No UART for debugging
+
 ##############################################################
 
 # Adafruit Circuit Playground 32u4 w/Caterina Configuration
@@ -912,7 +1089,7 @@ circuitplay32u4cat.build.variant=circuitplay32u4
 circuitplay32u4cat.build.board=AVR_CIRCUITPLAY
 circuitplay32u4cat.build.usb_product="Circuit Playground"
 circuitplay32u4cat.build.usb_manufacturer="Adafruit"
-circuitplay32u4cat.build.extra_flags={build.usb_flags}
+# circuitplay32u4cat.build.extra_flags={build.usb_flags}
 circuitplay32u4cat.upload.protocol=avr109
 circuitplay32u4cat.upload.maximum_size=28672
 circuitplay32u4cat.upload.speed=57600
@@ -922,6 +1099,16 @@ circuitplay32u4cat.upload.wait_for_upload_port=true
 circuitplay32u4cat.upload.tool=avrdude
 circuitplay32u4cat.vid.0=0x239A
 circuitplay32u4cat.pid.0=0x8011
+
+# DEBUG OUTPUT
+circuitplay32u4cat.menu.debug.None=None
+circuitplay32u4cat.menu.debug.None.build.debug_output=
+circuitplay32u4cat.menu.debug.Serial=Serial
+circuitplay32u4cat.menu.debug.Serial.build.debug_output=-DDEBUG_OUT=Serial
+circuitplay32u4cat.menu.debug.Serial1=Serial1
+circuitplay32u4cat.menu.debug.Serial1.build.debug_output=-DDEBUG_OUT=Serial1
+
+circuitplay32u4cat.build.extra_flags={build.usb_flags} {build.debug_output}
 
 ##############################################################
 
@@ -958,7 +1145,16 @@ yunmini.build.usb_product="Arduino Yún Mini"
 yunmini.build.board=AVR_YUNMINI
 yunmini.build.core=arduino
 yunmini.build.variant=yun
-yunmini.build.extra_flags={build.usb_flags}
+
+# DEBUG OUTPUT
+yunmini.menu.debug.None=None
+yunmini.menu.debug.None.build.debug_output=
+yunmini.menu.debug.Serial=Serial
+yunmini.menu.debug.Serial.build.debug_output=-DDEBUG_OUT=Serial
+yunmini.menu.debug.Serial1=Serial1
+yunmini.menu.debug.Serial1.build.debug_output=-DDEBUG_OUT=Serial1
+
+yunmini.build.extra_flags={build.usb_flags} {build.debug_output}
 
 ##############################################################
 
@@ -995,7 +1191,16 @@ chiwawa.build.usb_product="Arduino Industrial 101"
 chiwawa.build.board=AVR_INDUSTRIAL101
 chiwawa.build.core=arduino
 chiwawa.build.variant=yun
-chiwawa.build.extra_flags={build.usb_flags}
+
+# DEBUG OUTPUT
+chiwawa.menu.debug.None=None
+chiwawa.menu.debug.None.build.debug_output=
+chiwawa.menu.debug.Serial=Serial
+chiwawa.menu.debug.Serial.build.debug_output=-DDEBUG_OUT=Serial
+chiwawa.menu.debug.Serial1=Serial1
+chiwawa.menu.debug.Serial1.build.debug_output=-DDEBUG_OUT=Serial1
+
+chiwawa.build.extra_flags={build.usb_flags} {build.debug_output}
 
 ##############################################################
 
@@ -1032,7 +1237,16 @@ one.build.usb_product="Linino One"
 one.build.board=AVR_LININO_ONE
 one.build.core=arduino
 one.build.variant=yun
-one.build.extra_flags={build.usb_flags}
+
+# DEBUG OUTPUT
+one.menu.debug.None=None
+one.menu.debug.None.build.debug_output=
+one.menu.debug.Serial=Serial
+one.menu.debug.Serial.build.debug_output=-DDEBUG_OUT=Serial
+one.menu.debug.Serial1=Serial1
+one.menu.debug.Serial1.build.debug_output=-DDEBUG_OUT=Serial1
+
+one.build.extra_flags={build.usb_flags} {build.debug_output}
 
 ##############################################################
 
@@ -1065,4 +1279,11 @@ unowifi.build.board=AVR_UNO_WIFI_DEV_ED
 unowifi.build.core=arduino
 unowifi.build.variant=standard
 unowifi.build.esp_ch_uart_br=19200
-unowifi.build.extra_flags=-DESP_CH_UART -DESP_CH_UART_BR={build.esp_ch_uart_br}
+
+# DEBUG OUTPUT
+unowifi.menu.debug.None=None
+unowifi.menu.debug.None.build.debug_output=
+unowifi.menu.debug.Serial=Serial
+unowifi.menu.debug.Serial.build.debug_output=-DDEBUG_OUT=Serial
+
+unowifi.build.extra_flags=-DESP_CH_UART -DESP_CH_UART_BR={build.esp_ch_uart_br} {build.debug_output}
